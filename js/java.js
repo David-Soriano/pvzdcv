@@ -1,5 +1,3 @@
-
-
 function eli(){
 	let v = confirm("¿Esta seguro de eliminar este registro?");
 	return v;
