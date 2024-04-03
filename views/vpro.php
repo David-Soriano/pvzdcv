@@ -1,0 +1,67 @@
+<?php include ("controllers/cpro.php");
+echo titulo('bi-box2-heart', "Producto", 1);
+?>
+
+<div id="ins">
+	<form name="frm1" action="#" method="POST">
+		<div class="row">
+			<div class="form-group col-md-4">
+				<label for="nompro">Producto</label>
+				<input type="text" class="form-control form-control" name="nompro" id="nompro" value="<?php if ($dtOne && $dtOne[0]['nompro'])
+					echo $dtOne[0]['nompro']; ?>" required>
+			</div>
+			<div class="form-group col-md-4">
+				<label for="prcpro">Precio</label>
+				<input type="number" class="form-control form-control" name="prcpro" id="prcpro" value="<?php if ($dtOne && $dtOne[0]['prcpro'])
+					echo $dtOne[0]['prcpro']; ?>" required>
+			</div>
+			<div class="form-group col-md-4">
+				<label for="imgpro">Imagen</label>
+				<input type="text" class="form-control form-control" name="imgpro" id="imgpro">
+			</div>
+			<div class="form-group col-md-8">
+				<label for="despro">Descripción</label>
+				<textarea class="form-control form-control" name="despro" id="despro" required><?php if ($dtOne && $dtOne[0]['despro'])
+					echo $dtOne[0]['despro']; ?></textarea>
+			</div>
+			<div class="form-group col-md-4">
+				<br>
+				<input type="hidden" name="ope" value="save">
+				<input type="hidden" name="id" value="<?php if ($dtOne && $dtOne[0]['id'])
+					echo $dtOne[0]['id']; ?>" required>
+				<input type="submit" class="btn btn-primary" value="Enviar">
+			</div>
+		</div>
+	</form>
+</div>
+
+
+<table id="example" class="table table-striped" style="width:100%">
+	<thead>
+		<tr>
+			<th>Id</th>
+			<th>Producto</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		<?php if ($dat) {
+			foreach ($dat as $dt) { ?>
+				<tr>
+					<td>
+						<?= $dt["id"]; ?>
+					</td>
+					<td>
+						<?= $dt["nompro"]; ?>
+					</td>
+					<td>
+						<a class="btn-act" href="index.php?ope=del&id=<?= $dt["id"]; ?>" onclick="return eli();" title="Eliminar"><i
+								class="fa-solid fa-trash"></i></a>
+						<a class="btn-act" href="index.php?ope=edi&id=<?= $dt["id"]; ?>" title="Editar"><i
+								class="fa-solid fa-pen-to-square"></i></a>
+					</td>
+				</tr>
+			<?php }
+		} ?>
+	</tbody>
+</table>
