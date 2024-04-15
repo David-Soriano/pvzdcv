@@ -60,7 +60,7 @@ nav ul li a:hover svg{
 }
 
 .btn-add{
-    position: fixed;
+    position: absolute;
     right: 60px;
     top: 171px;
     cursor: pointer;
