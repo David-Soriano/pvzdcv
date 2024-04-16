@@ -19,9 +19,12 @@ if ($ope=="save") {
 	else $mpro->save();
 }
 
+$m = 2;
 if ($ope=="del" && $id) $mpro->del();
-if ($ope=="edi" && $id) $dtOne = $mpro->getOne(); else $dtOne=NULL;
+if ($ope=="edi" && $id){
+	$dtOne = $mpro->getOne();
+	$m = 1;
+} else $dtOne=NULL;
 
 $dat=$mpro->getAll();
-
 ?>

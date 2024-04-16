@@ -95,6 +95,7 @@ textarea{
 
 input[type="submit"]{
     background: #65a677;
+    border: none;
 }
 
 input[type="submit"]:hover{
