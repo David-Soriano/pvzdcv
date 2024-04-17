@@ -1,5 +1,6 @@
 <?php 
 include("models/mpro.php");
+include("controllers/optimg.php");
 
 $id = isset($_REQUEST['id']) ? $_REQUEST['id']:NULL;
 $nompro = isset($_POST['nompro']) ? $_POST['nompro']:NULL;
@@ -7,7 +8,11 @@ $despro = isset($_POST['despro']) ? $_POST['despro']:NULL;
 $prcpro = isset($_POST['prcpro']) ? $_POST['prcpro']:NULL;
 $imgpro = isset($_POST['imgpro']) ? $_POST['imgpro']:NULL;
 $ope = isset($_REQUEST['ope']) ? $_REQUEST['ope']:NULL;
+$fots = isset($_FILES['fots']['name']) ? $_FILES['fots']['name'] : NULL;
 
+if($fots){
+	$imgpro = opti($_FILES['fots'], 'fot', 'jotos', date('YmdHis'));
+}
 $mpro=new Mpro();
 $mpro->setId($id);
 if ($ope=="save") {

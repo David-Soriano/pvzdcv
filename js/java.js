@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-new DataTable("#example");
-=======
->>>>>>> 08f2d00505d9b6b2c161083a52d22074e5b050ab
 function eli(){
 	let v = confirm("¿Esta seguro de eliminar este registro?");
 	return v;

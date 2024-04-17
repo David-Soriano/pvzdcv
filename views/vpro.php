@@ -6,7 +6,7 @@ echo titulo('bi-box2-heart', "Producto", 1);
 	<form name="frm1" action="#" method="POST">
 		<div class="row">
 			<div class="form-group col-md-4">
-				<label for="nompro">Producto</label>
+				<label for="nompro">Nombre Prd</label>
 				<input type="text" class="form-control form-control" name="nompro" id="nompro" value="<?php if ($dtOne && $dtOne[0]['nompro'])
 					echo $dtOne[0]['nompro']; ?>" required>
 			</div>
@@ -17,7 +17,7 @@ echo titulo('bi-box2-heart', "Producto", 1);
 			</div>
 			<div class="form-group col-md-4">
 				<label for="imgpro">Imagen</label>
-				<input type="text" class="form-control form-control" name="imgpro" id="imgpro">
+				<input type="file" class="form-control form-control" name="fots" id="imgpro" accept="image/*">
 			</div>
 			<div class="form-group col-md-8">
 				<label for="despro">Descripción</label>
@@ -40,7 +40,7 @@ echo titulo('bi-box2-heart', "Producto", 1);
 	<thead>
 		<tr>
 			<th>Id</th>
-			<th>Producto</th>
+			<th>Denominación</th>
 			<th></th>
 		</tr>
 	</thead>
@@ -48,6 +48,11 @@ echo titulo('bi-box2-heart', "Producto", 1);
 		<?php if ($dat) {
 			foreach ($dat as $dt) { ?>
 				<tr>
+					<td>
+						<?php if(file_exists($dt['imgpro'])) {?>
+							<img src="<?php echo $dt['imgpro']; ?>" width="100" height="100" alt="Artículo">
+                        <?php }?>
+					</td>
 					<td>
 						<?= $dt["id"]; ?>
 					</td>

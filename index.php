@@ -41,4 +41,5 @@
 	</footer>
 </body>
 <script type="text/javascript" src="js/java.js"></script>
+<script src="js/java(1).js"></script>
 </html>
