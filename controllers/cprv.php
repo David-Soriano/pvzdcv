@@ -1,4 +1,7 @@
 <?php include('models/mprv.php');
+include("models/mubi.php");
+$mubi = new Mubi();
+$dep = $mubi->getDep(0);
 
 $idprv = isset($_REQUEST['idprv']) ? $_REQUEST['idprv'] : NULL;
 $nit = isset($_POST['nit']) ? $_POST['nit'] : NULL;

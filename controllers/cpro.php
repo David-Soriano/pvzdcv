@@ -10,8 +10,9 @@ $imgpro = isset($_POST['imgpro']) ? $_POST['imgpro']:NULL;
 $ope = isset($_REQUEST['ope']) ? $_REQUEST['ope']:NULL;
 $fots = isset($_FILES['fots']['name']) ? $_FILES['fots']['name'] : NULL;
 
-if($fots){
-	$imgpro = opti($_FILES['fots'], 'fot', 'jotos', date('YmdHis'));
+if ($fots){
+	if(file_exists($imgpro)) unlink($imgpro);
+	$imgpro = opti($_FILES['fots'], 'fot','jotos',date('YmdHis'));
 }
 $mpro=new Mpro();
 $mpro->setId($id);

@@ -79,7 +79,7 @@ class Mprv
     public function getAll()
     {
         $res = NULL;
-        $sql = "SELECT * FROM prv";
+        $sql = "SELECT v.idprv, v.nit, v.dirprv, v.razsc, v.codubi AS cm, m.nomubi AS nm, d.codubi AS cd, d.nomubi AS nd, v.corprv, v.telprv, v.nomprv  FROM prv AS v INNER JOIN ubi AS m ON v.codubi = m.codubi INNER JOIN ubi AS d ON m.depubi=d.codubi";
         $modelo = new Conexion();
         $conexion = $modelo->get_conexion();
         $result = $conexion->prepare($sql);
@@ -90,7 +90,7 @@ class Mprv
     public function getOne()
     {
         $res = NULL;
-        $sql = "SELECT * FROM prv WHERE idprv=:idprv";
+        $sql = "SELECT v.idprv, v.nit, v.dirprv, v.razsc, v.codubi AS cm, m.nomubi AS nm, d.codubi AS cd, d.nomubi AS nd, v.corprv, v.telprv, v.nomprv  FROM prv AS v INNER JOIN ubi AS m ON v.codubi = m.codubi INNER JOIN ubi AS d ON m.depubi=d.codubi WHERE v.idprv=:idprv";
         $modelo = new Conexion();
         $conexion = $modelo->get_conexion();
         $result = $conexion->prepare($sql);
@@ -147,7 +147,8 @@ class Mprv
         $result->execute();
     }
 
-    public function del(){
+    public function del()
+    {
         $sql = "DELETE FROM prv WHERE idprv=:idprv";
         $modelo = new Conexion();
         $conexion = $modelo->get_conexion();
@@ -157,4 +158,3 @@ class Mprv
         $result->execute();
     }
 }
-?>

@@ -24,3 +24,18 @@ btn1.addEventListener('click', ()=>{
 	btn1.style.display = 'none';
 	btn2.style.display = 'inherit';
 });
+
+
+function reloadMun(dep){
+	var parametros ={
+		"valor" : dep
+	};
+	$.ajax({
+		data: parametros,
+		url: 'views/selmun.php',
+		type: 'POST',
+		success: function(response){
+			$("#reload").html(response);
+		}
+	});
+}

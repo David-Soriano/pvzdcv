@@ -31,6 +31,29 @@ include("controllers/cprv.php");
 				<input type="text" class="form-control form-control" name="dirprv" id="dirprv" value="<?php if ($dtOne && $dtOne[0]['dirprv']) echo $dtOne[0]['dirprv']; ?>">
 			</div>
 			<div class="form-group col-md-4">
+				<label for="depto">Departamento</label>
+				<select class="form-select form-select" name="depto" id="depto" onchange="reloadMun(this.value)">
+					<option value="0">Seleccione Departamento</option>
+					<?php if ($dep) {
+						foreach ($dep as $dp) { ?>
+							<option value="<?= $dp['codubi']; ?>" <?php if ($dtOne && $dtOne[0]['cd']) echo "selected"; ?>><?= $dp['nomubi'] ?></option>
+					<?php }
+					} ?>
+				</select>
+			</div>
+			<div class="form-group col-md-6">
+				<label for="codubi">Municipio</label>
+				<div id="reload">
+					<select class="form-select form-select" name="codubi" id="codubi">
+						<?php if($dtOne && $dtOne[0]['cm'])
+						echo '<option value="'.$dtOne[0]['cm'].'">'.$dtOne[0]['nm'].'</option>';
+					else echo '<option value="0">Seleccione Departamento</option>';
+					?>
+						
+					</select>
+				</div>
+			</div>
+			<div class="form-group col-md-4">
 				<br>
 				<input type="hidden" name="ope" value="save">
 				<input type="hidden" name="idprv" value="<?php if ($dtOne && $dtOne[0]['idprv']) echo $dtOne[0]['idprv']; ?>" required>
@@ -45,9 +68,10 @@ include("controllers/cprv.php");
 	<thead>
 		<tr>
 			<th>Id</th>
-			<th>Nombre</th>
-			<th>NIT</th>
-			<th></th>
+			<th>Asesor - NIT</th>
+			<th>Razón Social</th>
+			<th>Dirección</th>
+			<th>Opciones</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -58,19 +82,20 @@ include("controllers/cprv.php");
 						<?= $dt["idprv"]; ?>
 					</td>
 					<td>
-						<?= $dt["nomprv"]; ?>
+						<?= $dt["nomprv"]; ?> - <?= $dt["nit"]; ?>
 					</td>
 					<td>
-						<?= $dt["nit"]; ?>
+						<?= $dt["razsc"]; ?>
 					</td>
 					<td>
-						<a class="btn-act" href="index.php?pg=261&ope=del&idprv=<?= $dt["idprv"]; ?>" onclick="return eli();" title="Eliminar"><i
-								class="fa-solid fa-trash"></i></a>
-						<a class="btn-act" href="index.php?pg=261&ope=edi&idprv=<?= $dt["idprv"]; ?>" title="Editar"><i
-								class="fa-solid fa-pen-to-square"></i></a>
+					<?= $dt["dirprv"];?> <?= $dt["nm"];?> <?= $dt["nd"];?>
+					</td>
+					<td>
+						<a class="btn-act" href="index.php?pg=261&ope=del&idprv=<?= $dt["idprv"]; ?>" onclick="return eli();" title="Eliminar"><i class="fa-solid fa-trash"></i></a>
+						<a class="btn-act" href="index.php?pg=261&ope=edi&idprv=<?= $dt["idprv"]; ?>" title="Editar"><i class="fa-solid fa-pen-to-square"></i></a>
 					</td>
 				</tr>
-			<?php }
+		<?php }
 		} ?>
 	</tbody>
 </table>

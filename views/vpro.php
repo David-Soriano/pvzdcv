@@ -3,7 +3,7 @@ echo titulo('bi-box2-heart', "Producto", 1);
 ?>
 
 <div id="ins">
-	<form name="frm1" action="#" method="POST">
+	<form name="frm1" action="#" method="POST" enctype="multipart/form-data">
 		<div class="row">
 			<div class="form-group col-md-4">
 				<label for="nompro">Nombre Prd</label>
@@ -18,6 +18,7 @@ echo titulo('bi-box2-heart', "Producto", 1);
 			<div class="form-group col-md-4">
 				<label for="imgpro">Imagen</label>
 				<input type="file" class="form-control form-control" name="fots" id="imgpro" accept="image/*">
+				<input type="hidden" name="imgpro" value="<?php if($dtOne && $dtOne[0]['imgpro']) echo $dtOne[0]['imgpro']; ?>">
 			</div>
 			<div class="form-group col-md-8">
 				<label for="despro">Descripción</label>
@@ -39,9 +40,10 @@ echo titulo('bi-box2-heart', "Producto", 1);
 <table id="example" class="table table-striped" style="width:100%">
 	<thead>
 		<tr>
+			<th>Foto</th>
 			<th>Id</th>
 			<th>Denominación</th>
-			<th></th>
+			<th>Opciones</th>
 		</tr>
 	</thead>
 	<tbody>
