@@ -23,7 +23,8 @@
 <body>
 	<?php include("models/conexion.php");
 	include("controllers/funcion.php");
-	$pg = isset($_REQUEST['pg']) ? $_REQUEST['pg'] : NULL; ?>
+	$pg = isset($_REQUEST['pg']) ? $_REQUEST['pg'] : NULL; 
+	if(!$pg && $_SESSION['pagini']) $pg = $_SESSION['pagini']?>
 	<header>
 		<?php include("views/header.php"); ?>
 	</header>
@@ -32,9 +33,9 @@
 	</section>
 	<section class="conte">
 		<?php
-		if ($pg == "261") include("views/vprv.php");
-		else if ($pg == "789") include("views/vubi.php");
-		else include("views/vpro.php");
+		$rut = validar($pg);
+		if ($rut) include($rut[0]['rutpag']);
+		else echo "<h4>No tiene permisos para ingresar a este sitio</h4>";
 		?>
 	</section>
 	<footer>

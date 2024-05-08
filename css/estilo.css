@@ -109,12 +109,13 @@ nav ul {
     text-align: center;
 }
 
-nav ul li a svg {
+nav ul li a i {
     color: rgb(255, 255, 255);
     transition: all 400ms;
+    font-size: 25px;
 }
 
-nav ul li a:hover svg {
+nav ul li a:hover i {
     color: #65a677;
     transform: scale(1.2);
 }
@@ -125,8 +126,8 @@ nav ul li:nth-child(4) a{
     font-size: 18px;
 }
 
-nav ul li:nth-child(4) a:hover{
-    color: #F00;
+nav ul li:nth-child(4) a i:hover{
+    color: #db5757;
     transform: scale(1.1);
 }
 .btn-add {
@@ -148,7 +149,7 @@ nav ul li:nth-child(4) a:hover{
 #ins {
     overflow: hidden;
     transition: all 1s ease-out;
-    height: 30vh;
+    height: 0;
 }
 
 textarea {
