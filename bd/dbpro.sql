@@ -117,7 +117,7 @@ CREATE TABLE `persona` (
 --
 
 INSERT INTO `persona` (`idpsn`, `nompsn`, `apepsn`, `docpsn`, `tpdcpsn`, `telpsn`, `emapsn`, `passpsn`, `actpsn`, `idper`, `genpsn`, `fhnapsn`) VALUES
-(1, 'David', 'Soriano', '', 1, NULL, 'davidscicua314@gmail.com', '123.Abcd', 1, 1, NULL, NULL);
+(1, 'David', 'Soriano', '', 1, NULL, 'davidscicua314@gmail.com', '9738b7d340cdf2f3031752e4d11769a0d6893f16', 1, 1, NULL, NULL);
 
 -- --------------------------------------------------------
 
