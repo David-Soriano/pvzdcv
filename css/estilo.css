@@ -33,6 +33,17 @@ h2 i {
     margin: 0 27px 0 0;
 }
 
+.bx-inPrf{
+    position: absolute;
+    right: 65px;
+    top: 55px;
+    color: #acabab;
+}
+
+.bx-inPrf P{
+    margin: 0;
+    font-size: 11px;
+}
 .menu {
     width: 5%;
     float: left;
@@ -46,6 +57,50 @@ h2 i {
     flex-direction: column;
     background: #f0f0f0;
     border-radius: 12px;
+    margin: auto;
+}
+
+.bx-ini-sc{
+    min-height: 50vh;
+}
+
+.bx-ini-sc .col-6{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.bx-ini-sc .col-6 h6{
+    margin: 0;
+}
+
+.bx-ini-sc .col-6 form{
+    display: flex;
+    flex-direction: column;
+}
+
+.bx-ini-sc .col-6 form input{
+    border-radius: 10px;
+    border: none;
+    padding: 1% 4%;
+}
+
+.bx-ini-sc .col-6 form input:focus{
+    outline: 1px solid #5d7a65;
+}
+.bx-ini-sc .col-6 form input[type="submit"]{
+    border-radius: 5px;
+    width: 50%;
+    margin: 9% auto;
+    color: white;
+    padding: 0;
+}
+
+.msjErr{
+    color: #d00;
+    margin: 2% auto;
+    font-size: 12px;
 }
 
 nav ul {
@@ -64,6 +119,16 @@ nav ul li a:hover svg {
     transform: scale(1.2);
 }
 
+nav ul li:nth-child(4) a{
+    color: rgb(255, 255, 255);
+    transition: all 400ms;
+    font-size: 18px;
+}
+
+nav ul li:nth-child(4) a:hover{
+    color: #F00;
+    transform: scale(1.1);
+}
 .btn-add {
     position: absolute;
     right: 60px;
@@ -83,7 +148,7 @@ nav ul li a:hover svg {
 #ins {
     overflow: hidden;
     transition: all 1s ease-out;
-    height: 20vh;
+    height: 30vh;
 }
 
 textarea {

@@ -1,3 +1,4 @@
+<?php require_once("models/seg.php");?>
 <!DOCTYPE html>
 <html>
 
@@ -26,29 +27,15 @@
 	<header>
 		<?php include("views/header.php"); ?>
 	</header>
+	<section class="menu">
+		<?php include("views/menu.php"); ?>
+	</section>
 	<section class="conte">
-		<div class="row bx-ini-sc">
-			<div class="col-6">
-				<h3>Bienvenido a la tienda de <span>Don Julio</span></h3>
-			</div>
-			<div class="col-6">
-				<h5>Iniciar Sesión</h5>
-				<form action="models/control.php" method="POST">
-					<label for="inpUser">Usuario</label>
-					<input type="email" name="usu" >
-					<label for="inpPass">Contraseña</label>
-					<input type="password" name="pss" >
-					<?php 
-					$err = isset($_GET['err']) ? $_GET['err'] : NULL;
-					if ($err == 'oK') {
-                        echo "<p class='msjErr'>Usuario o contraseña incorrectos</p>";
-                    }
-					?>
-					<input type="submit" value="Ingresar">
-				</form>
-
-			</div>
-		</div>
+		<?php
+		if ($pg == "261") include("views/vprv.php");
+		else if ($pg == "789") include("views/vubi.php");
+		else include("views/vpro.php");
+		?>
 	</section>
 	<footer>
 		<?php include("views/footer.php"); ?>

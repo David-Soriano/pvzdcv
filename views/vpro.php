@@ -62,9 +62,9 @@ echo titulo('bi-box2-heart', "Producto", 1);
 						<?= $dt["nompro"]; ?>
 					</td>
 					<td>
-						<a class="btn-act" href="index.php?ope=del&id=<?= $dt["id"]; ?>" onclick="return eli();" title="Eliminar"><i
+						<a class="btn-act" href="home.php?ope=del&id=<?= $dt["id"]; ?>" onclick="return eli();" title="Eliminar"><i
 								class="fa-solid fa-trash"></i></a>
-						<a class="btn-act" href="index.php?ope=edi&id=<?= $dt["id"]; ?>" title="Editar"><i
+						<a class="btn-act" href="home.php?ope=edi&id=<?= $dt["id"]; ?>" title="Editar"><i
 								class="fa-solid fa-pen-to-square"></i></a>
 					</td>
 				</tr>

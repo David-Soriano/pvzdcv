@@ -6,31 +6,31 @@ include("controllers/cprv.php");
 <div id="ins">
 	<form name="frm1" action="#" method="POST">
 		<div class="row">
-			<div class="form-group col-md-4">
+			<div class="form-group col-md-2 col-2">
 				<label for="nomprv">Nombre</label>
 				<input type="text" class="form-control form-control" name="nomprv" id="nomprv" value="<?php if ($dtOne && $dtOne[0]['nomprv']) echo $dtOne[0]['nomprv']; ?>" required>
 			</div>
-			<div class="form-group col-md-4">
+			<div class="form-group col-md-2 col-2">
 				<label for="nit">Nit</label>
 				<input type="number" class="form-control form-control" name="nit" id="nit" value="<?php if ($dtOne && $dtOne[0]['nit']) echo $dtOne[0]['nit']; ?>" required>
 			</div>
-			<div class="form-group col-md-4">
+			<div class="form-group col-md-2 col-3">
 				<label for="razsc">Razón Social</label>
 				<input type="text" class="form-control form-control" name="razsc" id="razsc" value="<?php if ($dtOne && $dtOne[0]['razsc']) echo $dtOne[0]['razsc']; ?>">
 			</div>
-			<div class="form-group col-md-3">
+			<div class="form-group col-md-3 col-3">
 				<label for="telprv">Teléfono</label>
 				<input type="number" class="form-control form-control" name="telprv" id="telprv" value="<?php if ($dtOne && $dtOne[0]['telprv']) echo $dtOne[0]['telprv']; ?>" required>
 			</div>
-			<div class="form-group col-md-3">
+			<div class="form-group col-md-3 col-2">
 				<label for="corprv">Correo</label>
 				<input type="email" class="form-control form-control" name="corprv" id="corprv" value="<?php if ($dtOne && $dtOne[0]['corprv']) echo $dtOne[0]['corprv']; ?>">
 			</div>
-			<div class="form-group col-md-3">
+			<div class="form-group col-md-3 col-3">
 				<label for="dirprv">Dirección</label>
 				<input type="text" class="form-control form-control" name="dirprv" id="dirprv" value="<?php if ($dtOne && $dtOne[0]['dirprv']) echo $dtOne[0]['dirprv']; ?>">
 			</div>
-			<div class="form-group col-md-4">
+			<div class="form-group col-md-3 col-3">
 				<label for="depto">Departamento</label>
 				<select class="form-select form-select" name="depto" id="depto" onchange="reloadMun(this.value)">
 					<option value="0">Seleccione Departamento</option>
@@ -41,7 +41,7 @@ include("controllers/cprv.php");
 					} ?>
 				</select>
 			</div>
-			<div class="form-group col-md-6">
+			<div class="form-group col-md-6 col-3" >
 				<label for="codubi">Municipio</label>
 				<div id="reload">
 					<select class="form-select form-select" name="codubi" id="codubi">
@@ -91,8 +91,8 @@ include("controllers/cprv.php");
 					<?= $dt["dirprv"];?> <?= $dt["nm"];?> <?= $dt["nd"];?>
 					</td>
 					<td>
-						<a class="btn-act" href="index.php?pg=261&ope=del&idprv=<?= $dt["idprv"]; ?>" onclick="return eli();" title="Eliminar"><i class="fa-solid fa-trash"></i></a>
-						<a class="btn-act" href="index.php?pg=261&ope=edi&idprv=<?= $dt["idprv"]; ?>" title="Editar"><i class="fa-solid fa-pen-to-square"></i></a>
+						<a class="btn-act" href="home.php?pg=261&ope=del&idprv=<?= $dt["idprv"]; ?>" onclick="return eli();" title="Eliminar"><i class="fa-solid fa-trash"></i></a>
+						<a class="btn-act" href="home.php?pg=261&ope=edi&idprv=<?= $dt["idprv"]; ?>" title="Editar"><i class="fa-solid fa-pen-to-square"></i></a>
 					</td>
 				</tr>
 		<?php }
