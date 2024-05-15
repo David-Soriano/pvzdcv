@@ -33,4 +33,4 @@ if ($ope=="edi" && $id){
 } else $dtOne=NULL;
 
 $dat=$mpro->getAll();
-?>
+
