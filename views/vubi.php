@@ -17,16 +17,15 @@ echo titulo('bi-compass', "Ubicación", 1);
                     <?php if ($dtDtp) {
                         foreach ($dtDtp as $dtD) { ?>
                             <option value="<?= $dtD['codubi']; ?>" <?php if ($dtOne && $dtOne[0]['depubi'] == $dtD['codubi'])
-                                echo "selected"; ?>><?= $dtD['nomubi']; ?></option>
+                                  echo "selected"; ?>><?= $dtD['nomubi']; ?></option>
                         <?php }
                     } ?>
                 </select>
             </div>
             <div class="form-group col-md-4">
                 <input type="hidden" name="ope" value="save">
-                <input type="hidden" name="codubi"
-                    value="<?php if ($dtOne && $dtOne[0]['codubi'])
-                        echo $dtOne[0]['codubi'] ?>">
+                <input type="hidden" name="codubi" value="<?php if ($dtOne && $dtOne[0]['codubi'])
+                    echo $dtOne[0]['codubi'] ?>">
                     <input type="submit" name="" class="btn btn-primary" value="Enviar">
                 </div>
             </div>
@@ -43,19 +42,19 @@ echo titulo('bi-compass', "Ubicación", 1);
         </thead>
         <tbody>
         <?php if ($dat) {
-                        foreach ($dat as $dt) { ?>
+                    foreach ($dat as $dt) { ?>
                 <tr>
                     <td><?= $dt["cm"]; ?></td>
                     <td><?= $dt["nm"] . " " . $dt["nd"]; ?></td>
                     <td>
-                        <a href="index.php?pg=789&ope=del&codubi=<?= $dt["cm"]; ?>" onclick="return eli();" title="Eliminar"><i
-                                class="fa-solid fa-trash"></i></a>
-                        <a href="index.php?pg=789&ope=edi&codubi=<?= $dt["cm"]; ?>" title="Editar"><i
+                        <a class="btn-act" href="index.php?pg=789&ope=del&codubi=<?= $dt["cm"]; ?>" onclick="return eli();"
+                            title="Eliminar"><i class="fa-solid fa-trash"></i></a>
+                        <a class="btn-act" href="index.php?pg=789&ope=edi&codubi=<?= $dt["cm"]; ?>" title="Editar"><i
                                 class="fa-solid fa-pen-to-square"></i></a>
                     </td>
                 </tr>
             <?php }
-                    } ?>
+                } ?>
     </tbody>
 
     <tfoot>
@@ -65,3 +64,4 @@ echo titulo('bi-compass', "Ubicación", 1);
             <th></th>
         </tr>
     </tfoot>
+</table>

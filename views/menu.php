@@ -6,12 +6,12 @@
         ?>
         <li>
             <a href="home.php?pg=<?=$dt['idpag'];?>" title="<?=$dt['nompag'];?>">
-                <i class="bi <?=$dt['icopag'];?>"></i>
+                <i class="<?=$dt['icopag'];?>"></i>
             </a>
         </li>
         <?php }}?>
         <li>
-            <a href="views/vwSal.php" title="Salir">
+            <a href="views/vwSal.php" title="Salir" id="btnExit">
                 <i class="bi bi-box-arrow-left"></i>
             </a>
         </li>

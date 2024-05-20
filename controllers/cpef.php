@@ -5,7 +5,9 @@ $idper = isset($_POST['idper']) ? $_POST['idper'] : NULL;
 $nomper = isset($_POST['nomper']) ? $_POST['nomper'] : NULL;
 $pagini = isset($_POST['pagini']) ? $_POST['_pagini'] : NULL;
 
-$ope = isset($_POST['ope']) ? $_POST['_ope'] : NULL;
+$ope = isset($_REQUEST['ope']) ? $_REQUEST['_ope'] : NULL;
+
+$dtOne = NULL;
 
 $mpef = new Mpef();
 
@@ -29,3 +31,4 @@ if($ope == "del" && $idper){
 }
 
 $datAll = $mpef -> getAll();
+$datAllpg = $mpef -> getAllPg();

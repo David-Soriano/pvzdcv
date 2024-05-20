@@ -4,6 +4,8 @@ class Mpef{
     private $nomper;
     private $pagini;
 
+	private $idpag;
+
     function getIdPer(){
         return $this -> idper; 
     }
@@ -13,6 +15,9 @@ class Mpef{
     function getPagini(){
         return $this -> pagini; 
     }
+	function getIdpag(){
+		return $this -> idpag;
+	}
     function setIdPer($idper){
         $this -> idper = $idper;
     }
@@ -22,9 +27,12 @@ class Mpef{
     function setPagini($pagini){
         $this -> pagini = $pagini;
     }
+	function setIdpag($idpag){
+		$this -> idpag = $idpag;
+	}
     function getAll(){
         $res = NULL;
-		$sql = "SELECT * FROM persona WHERE idoer = :idper";
+		$sql = "SELECT f.idper, f.nomper, f.pagini, g.nompag, g.icopag FROM perfil AS f INNER JOIN pagina AS g ON f.pagini = g.idpag";
 		$modelo = new Conexion();
 		$conexion = $modelo->get_conexion();
 		$result = $conexion->prepare($sql);
@@ -92,4 +100,32 @@ class Mpef{
 		$res= $result->fetchall(PDO::FETCH_ASSOC);
 		return $res;
     }
+
+	function getCan(){
+		$res = NULL;
+		$modelo = new Conexion();
+		$conexion = $modelo -> get_conexion();
+		$sql = "SELECT COUNT(idpag) AS can FROM pagper WHERE idper = :idper";
+		$result = $conexion -> prepare($sql);
+		$idper = $this->getIdper();
+		$result -> bindParam(":idper", $idper);
+		$result -> execute();
+		$res = $result -> fetchall(PDO::FETCH_ASSOC);
+		return $res;
+	}
+
+	public function getCanOk(){
+		$res = NULL;
+		$modelo = new Conexion();
+		$conexion = $modelo -> get_conexion();
+		$sql = "SELECT COUNT(idpag) AS can FROM pagper WHERE idper = :idper AND idpag = :idpag";
+		$result = $conexion -> prepare($sql);
+		$idper = $this -> getIdPer();
+		$result -> bindParam(":idper", $idper);
+		$idpag = $this -> getIdpag();
+		$result -> bindParam(":idpag", $idpag);
+		$result -> execute();
+		$res = $result -> fetchall(PDO::FETCH_ASSOC);
+		return $res;
+	}
 }

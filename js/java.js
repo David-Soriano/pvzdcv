@@ -20,7 +20,7 @@ btn2.addEventListener('click',()=>{
 	btn2.style.display = 'none';
 });
 btn1.addEventListener('click', ()=>{
-	document.getElementById('ins').style.height = '30vh';
+	document.getElementById('ins').style.height = 'auto';
 	btn1.style.display = 'none';
 	btn2.style.display = 'inherit';
 });

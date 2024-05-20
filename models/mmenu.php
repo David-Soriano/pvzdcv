@@ -13,7 +13,7 @@ class Mmenu
         $res = NULL;
         $modelo = new Conexion();
         $conexion = $modelo->get_conexion();
-        $sql = "SELECT p.idpag, p.nompag, p.rutpag, p.mospag, p.ordpag, p.icopag FROM pagina AS p INNER JOIN pagper AS f ON p.idpag = f.idpag WHERE f.idper = :idper;";
+        $sql = "SELECT p.idpag, p.nompag, p.rutpag, p.mospag, p.ordpag, f.idper, p.icopag FROM pagina AS p INNER JOIN pagper AS f ON p.idpag = f.idpag WHERE f.idper = :idper";
         $result = $conexion->prepare($sql);
         $idper = isset($_SESSION['idper']) ? $_SESSION['idper'] : 0;
         $result->bindParam(":idper", $idper);
